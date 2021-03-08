@@ -1,5 +1,5 @@
 # Aula 02
-# Professora Gabriela Ceasere
+# Professora Gabriela Caesere
 
 round (1.333) 
 round (pi)
@@ -37,7 +37,7 @@ falso
 # Para se organizar
 list.files() # Listar arquivos
 getwd() # Pegar Diretório
-setwd("/Users/marianaruggeri/Documents/CODE/RStudio/") # Setar novo endereço para trabalhar
+setwd("/Users/marianaruggeri/Documents/CODE/RStudio/curso_R_ibpad") # Setar novo endereço para trabalhar
 
 # Atribuir Data e Hora
 Sys.Date()
@@ -67,3 +67,30 @@ glimpse(agenda_min_com)
 # Upolad via menu File > Import DataSet > From Text (readr) 
 # Browse.. [escolha o caminho/arquivo] > open > import
 
+# Funções para Verficar os Arquivos
+
+# contar valores univos nome do arquivo$`coluna`
+unique(agenda_min_com$`Local do Compromisso`)
+
+# quantidade de linhas
+nrow(agenda_min_com)
+
+# Nome dos cabeçalhos
+colnames(agenda_min_com)
+
+# função view(nome da variavel que recebe o arquivo) no console exibe o arquivo
+
+# Exibe as primeiras linhas do arquivo
+head(agenda_min_com)
+head(agenda_min_com, 12)
+
+# Exibe as utilmas linhas do arquivo. Após a virgula, informa a quantidade de linhas
+tail(agenda_min_com,12)
+
+summary(agenda_min_com)
+
+# Upload de Arquivo XLS
+
+populacao <- readxl::read_excel("dados/ibge/estimativa_dou_2020.xls")
+
+glimpse(populacao)
