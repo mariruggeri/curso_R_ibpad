@@ -94,3 +94,24 @@ summary(agenda_min_com)
 populacao <- readxl::read_excel("dados/ibge/estimativa_dou_2020.xls")
 
 glimpse(populacao)
+
+populacao <- readxl::read_excel("dados/ibge/estimativa_dou_2020.xls", skip = 1)
+
+glimpse(populacao)
+head(populacao)
+
+populacao <- readxl::read_excel("dados/ibge/estimativa_dou_2020.xls", skip = 1, sheet = "Municípios")
+
+head(populacao)
+
+# Uplaoad de Arquivos via Link
+
+municipios <- data.table::fread("https://raw.githubusercontent.com/betafcc/Municipios-Brasileiros-TSE/master/municipios_brasileiros_tse.csv")
+
+glimpse(municipios)
+nrow(municipios)
+
+municipios_lite <- data.table::fread("https://raw.githubusercontent.com/betafcc/Municipios-Brasileiros-TSE/master/municipios_brasileiros_tse.csv", nrows = 10, select = c("codigo_tse","codigo_ibge"))
+nrow(municipios_lite)
+
+# Correção de Econding -->  enconding = "Latin-1" / enconding = "UTF-8"
