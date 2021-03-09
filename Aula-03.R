@@ -35,3 +35,28 @@ vetor_num_repetidos <- c(rep(2,50))
 # Coletar informações do vetor com STR
 str(uf_nordeste)
 
+########
+
+library(tidyverse)
+
+df <- readr::read_csv2("dados/Ano-2020.csv")
+
+# df <- readr::read_csv2("dados/Ano-2020.csv", n_max = 10) 
+# para importar só 10 linhas no data frame
+# ?read_csv2() --> para ver os parâmetros da função
+
+glimpse(df)
+
+# Confirmar informações no DataFrame
+is.na(df$cpf)
+is.na(df$ideCadastro)
+is.na(df$txNomeParlamentar)
+
+# Salvando informação em uma linha
+linha_3 <- df[3,]
+
+# linha_3 <- df[3:10,] ---> Para pegar a informação de um conjunto de linhas
+
+# Quando preenchido retorna TRUE e vazio FALSE
+complete.cases(df$cpf)
+
