@@ -1,6 +1,6 @@
 # Aula 07
 # Parte 01
-# Professor Sila Gongaza 
+# Professor Sillas Gongaza 
 # Capítulo 07 - Dados em strings (texto)
 
 library(tidyverse)
