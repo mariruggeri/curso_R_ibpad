@@ -78,3 +78,9 @@ df_2017 <- df_feliz %>%
 
 ggplot(df_2017, aes(x = log_gdp_per_capita,
                     y = life_expec)) + geom_point()
+
+
+readr::write_csv2(df_feliz, "df_feliz.csv")
+readr::write_csv2(df_2017, "df_2017.csv")
+
+
