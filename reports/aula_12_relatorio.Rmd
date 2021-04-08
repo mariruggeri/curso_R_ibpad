@@ -1,0 +1,65 @@
+---
+title: "Aula-12-pt-02"
+author: "Mariana Ruggeri"
+date: "4/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introdução
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis nisl malesuada nisi hendrerit, eu consequat neque tempus. Etiam ut scelerisque odio. *Suspendisse potenti*.  Fusce a dui sit amet felis placerat viverra. Nulla imperdiet tortor eu ex tincidunt, sed mattis nisi posuere. Aliquam erat volutpat. Integer vitae tincidunt ante, accumsan congue lectus. Nunc vehicula ullamcorper tellus, in convallis velit dapibus quis. Mauris ullamcorper placerat pellentesque. Cras in efficitur urna.  
+
+Aenean nec quam ac urna rhoncus lacinia eu sed elit. Pellentesque nec convallis risus. Sed id gravida nunc. Nullam molestie porttitor leo, nec convallis lectus pretium sed. Aliquam ornare enim sodales velit feugiat tempus. Duis at convallis justo. Curabitur tristique lectus velit, ut maximus dolor ultrices ut. Cras nec neque sit amet nulla tempor feugiat ac sed libero. Nullam maximus at augue sit amet mollis. Donec vel nulla lorem. Morbi eu dolor auctor, convallis tellus at, scelerisque orci. Quisque nec venenatis tellus. Donec ultrices quam ac leo iaculis, vel laoreet leo sodales. Nulla lacinia leo eget tortor consectetur convallis. Integer consectetur magna nec sollicitudin condimentum. Praesent commodo finibus lacus id dapibus.
+
+**Generated 2 paragraphs, 180 words, 1238 bytes of [Lorem Ipsum](https://www.lipsum.com/feed/html)**
+
+#### Pacotes Utilizados
+```{r}
+
+library(tidyverse)
+
+```
+
+
+## Importação de Arquivo
+
+```{r}
+df <- readr::read_csv2("df_feliz.csv")
+```
+
+## Análise de Dados
+
+### Tabela
+A Tabela abaixo mostra a quantidade de países por continente.
+
+```{r}
+
+df %>% count(continent)
+
+```
+
+### Gráfico
+Abaixo um gráfico.
+
+```{r}
+
+df %>%
+  count(continent) %>%
+  ggplot(aes(x = continent, y = n)) +
+  geom_col()
+  
+  
+```
+
+```{r, echo = FALSE}
+
+df %>%
+  count(continent) %>%
+  ggplot(aes(x = continent, y = n)) +
+  geom_col()
+  
+```
+
